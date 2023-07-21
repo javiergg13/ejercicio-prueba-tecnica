@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { type User } from './interfaces/interfaces'
+import { type User } from './types.d'
 import { UserList } from './components/usersList'
 
 function App () {

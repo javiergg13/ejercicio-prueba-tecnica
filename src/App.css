@@ -2,6 +2,8 @@
   margin: 0 auto;
   text-align: center;
   width: 100%;
+  background-color: #111;
+  color: aliceblue;
 }
 
 .header-buttons {

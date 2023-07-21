@@ -1,4 +1,4 @@
-import { type User } from '../interfaces/interfaces'
+import { type User } from '../types.d'
 
 interface Props {
   users: User[]
