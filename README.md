@@ -15,6 +15,32 @@ Los pasos a seguir:
 - [] Avoid sorting users again the data when the user is changing filter by country.
 - [] Sort by clicking on the column header.
 
+# Pasos para crear un proyecto con esta configuración
+
+- npm create vite@latest
+- nombre-proyecto
+- React
+- TypeScript + SWC
+- cd nombre-proyecto
+- pnpm i
+
+# Configuración ESLint
+- npx eslint --init
+- To check syntax, find problems, and enforce code style
+- JS modules
+- React
+- Yes to TS
+- Browser
+- Popular style guide
+- Standard
+- JS
+- Yes to install
+- pnpm
+- Ir al archivo .eslintrc.cjs
+- Añadir en parserOption la linea project: './tsconfig.json'
+- Añadir en rules las reglas que quieras evitar ('@typescript-eslint/explicit-function-return-type' : 'off',
+        "react/react-in-jsx-scope": "off", ...)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
