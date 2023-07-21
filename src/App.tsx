@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './App.css'
 import { type User } from './types.d'
 import { UserList } from './components/usersList'
@@ -26,6 +26,12 @@ function App () {
     setUsers(originalUsers.current)
     setColorRows(false)
     setOrderByCountry(false)
+  }
+
+  const handleFilterByCountry = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault()
+    const filteredUsers = users.filter(user => user.location.country.toLowerCase().includes(e.target.value.toLocaleLowerCase()))
+    setUsers(filteredUsers)
   }
 
   const sortedUsers = orderByCountry ? users.toSorted((a: User, b: User) => a.location.country.localeCompare(b.location.country)) : users
@@ -56,7 +62,7 @@ function App () {
           <button onClick={handleResetState}>
             Resetear estado
           </button>
-          <input type="text" placeholder="Filtra por país" />
+          <input type="text" placeholder="Filtra por país" onChange={handleFilterByCountry}/>
         </div>
       </header>
       <UserList users={sortedUsers} colorRows={colorRows} deleteUser={handleDelete} />
